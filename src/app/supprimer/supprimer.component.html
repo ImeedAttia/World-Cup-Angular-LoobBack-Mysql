@@ -1,0 +1,41 @@
+<h1>Supprimer Cette Cleint :</h1>
+
+<div class="d-flex justify-content-center">
+<form >
+  <div class="form-group">
+    <label for="exampleInputnom">Nom</label>
+    <input type="text" class="form-control" id="exampleInputnom" aria-describedby="NameHelp" placeholder="Enter Nom"  [(ngModel)]="C.nom" name="nom" readonly>
+  </div>
+
+  
+  
+  <div class="form-group">
+    <label for="exampleInputprenom">Prenom</label>
+    <input type="text" class="form-control" id="exampleInputprenom" aria-describedby="LastNameHelp" placeholder="Enter Prenom" [(ngModel)]="C.prenom" name="prenom" readonly>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" [(ngModel)]="C.email" name="email" readonly>
+  </div>
+
+
+
+  <div class="form-group">
+    <label for="exampleInputTel1">Telephone</label>
+    <input type="tel" class="form-control" id="exampleInputtel" aria-describedby="telHelp" placeholder="Enter Telephone" [(ngModel)]="C.tel" name="tel"  readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputTel1">Pays</label>
+    <input type="text" class="form-control" id="exampleInputPays" aria-describedby="PaysHelp" placeholder="Enter Pays" [(ngModel)]="C.pays" name="pays" readonly>
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" [(ngModel)]="C.password" name="password" readonly>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="supprimer(C.id)">Supprimer</button></form>
+</div>

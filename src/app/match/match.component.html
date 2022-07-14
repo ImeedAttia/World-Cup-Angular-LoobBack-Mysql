@@ -1,0 +1,17 @@
+
+<div class="card text-white bg-success  w-100" *ngFor="let p of LesProduit ; let i=index;"  >
+  <div>
+ 
+    <p class="card-text">stade : {{p.Stade}}</p>
+    
+  </div>
+  <div class="card-body text-center">
+    <h5 class="card-title">Match {{p.id}}</h5>
+    <p class="card-text"> <img src="../assets/{{p.Equipe1}}.png" width="60px" alt=""> {{p.Equipe1}} : {{p.Equipe2}}  <img src="../assets/{{p.Equipe2}}.png" width="60px" alt=""></p>
+    <p>arbitre : {{p.Arbitre}}</p>
+   
+    <button routerLink="/Match/Details/{{p.id}}"  class="btn btn-primary">Details</button>
+  </div>
+  <hr class="new5">
+</div>
+

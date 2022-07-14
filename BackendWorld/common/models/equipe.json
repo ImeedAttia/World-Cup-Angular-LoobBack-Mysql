@@ -1,0 +1,26 @@
+{
+  "name": "Equipe",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "Nom_equipe": {
+      "type": "string",
+      "required": true
+    },
+    "Entreneur": {
+      "type": "string",
+      "required": true
+    },
+    "pathimg": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

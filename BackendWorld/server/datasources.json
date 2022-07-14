@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "WorldCup": {
+    "host": "localhost",
+    "port": 3306,
+    "url": "",
+    "database": "WorldCup",
+    "password": "",
+    "name": "WorldCup",
+    "user": "root",
+    "connector": "mysql"
+  }
+}

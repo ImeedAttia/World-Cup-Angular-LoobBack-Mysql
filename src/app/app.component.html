@@ -1,0 +1,126 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger ">
+  <img src="../../assets/icon.png" alt="" width="45px">
+  <a class="navbar-brand" href="">World Cup 2022</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+        <a class="nav-link" routerLink="Home">Home </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Match">Match</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Profile/{{this.id}}"  *ngIf="login" >Profile</a>
+      </li> 
+      <li class="nav-item">
+        <a class="nav-link" routerLink="Admin" *ngIf="login"  >Admin</a>
+      </li> 
+            </ul>
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#Login"  *ngIf="!login">Login
+</button>	&nbsp;
+<button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignUp"  *ngIf="!login">SignUp
+</button>
+<button type="button" class="btn btn-outline-warning"  (click)="logout()"  *ngIf="login">Logout
+</button> 
+
+
+
+
+
+
+  </div >
+
+<div class="modal fade"  id="Login"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Login</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form #f="ngForm" (ngSubmit)="verifierLogin(f)">
+    <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword" >Password</label>
+        <input type="password" class="form-control" name="password" id="inputPassword" placeholder="Password" ngModel>
+    </div>
+    <div class="form-group">
+        <label class="form-check-label"><input type="checkbox"> Remember me</label>
+    </div>
+    <div class="modal-footer">
+        <button type="reset" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" >Login</button>
+      </div>
+    
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="SignUp"  tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Signup</h5>
+      
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <form #s="ngForm" (ngSubmit)="ajouter(s)">
+      <div class="form-group">
+        <label for="inputName">Name</label>
+        <input type="text" class="form-control" id="inputName" name="nom" placeholder="Name" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="inputPrenom">Prenom</label>
+        <input type="text" class="form-control" id="Prenom" name="Prenom" placeholder="Prenom" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="inputtelephone">telephone</label>
+        <input type="text" class="form-control" id="telephone" name="tel" placeholder="telephone" ngModel>
+    </div>
+      <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email" ngModel>
+    </div>
+    <label for="inputEmail">Pays</label>
+    <select class="form-control" name="pays" ngModel>
+     <option value="Tunisie">Tunisie</option>
+     <option value="France">France</option>
+     <option value="Algerie">Algerie</option>
+     <option value="Amerique">Amerique</option>
+     <option value="Brazil">Brazil</option>
+    </select>
+    <div class="form-group">
+        <label for="inputPassword"  >Password</label>
+        <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password" ngModel>
+    </div>
+    <div class="form-group">
+        <label for="inputPassword">Confirm Password</label>
+        <input type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary">SignUp</button>
+      </div>
+    
+</form>
+      </div>
+    </div>
+  </div>
+</div>
+</nav>
+<router-outlet></router-outlet>
